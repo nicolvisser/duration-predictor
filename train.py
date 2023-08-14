@@ -8,6 +8,7 @@ from duration_predictor.dataset import DurationsDataset, collate_fn
 from duration_predictor.module import LitDurationPredictor
 
 data_root = click.prompt("Path to the directory containing the prepared data", type=click.Path(exists=True, dir_okay=True, file_okay=False))
+version_name = click.prompt("Version name", type=str)
 
 train_dataset = DurationsDataset(
     root=data_root,
@@ -52,7 +53,7 @@ duration_predictor = LitDurationPredictor(
     num_blocks=1
 )
 
-tensorboard = pl_loggers.TensorBoardLogger(save_dir="")
+tensorboard = pl_loggers.TensorBoardLogger(save_dir="", version=version_name)
 
 checkpoint_callback = ModelCheckpoint(save_top_k=3, save_last=True, monitor="val_loss")
 
