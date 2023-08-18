@@ -9,6 +9,7 @@ from duration_predictor.module import LitDurationPredictor
 
 data_root = click.prompt("Path to the directory containing the prepared data", type=click.Path(exists=True, dir_okay=True, file_okay=False))
 version_name = click.prompt("Version name", type=str)
+num_codes = click.prompt("Number of codes", type=int)
 
 train_dataset = DurationsDataset(
     root=data_root,
@@ -43,7 +44,7 @@ val_dataloader = DataLoader(
 )
 
 duration_predictor = LitDurationPredictor(
-    num_codes=100,
+    num_codes=num_codes,
     embedding_dim=128,
     nhead=2,
     conv_channels=1024,
