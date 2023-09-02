@@ -3,3 +3,5 @@ torchaudio
 torchvision
 lightning
 tensorboardX
+click
+tqdm
