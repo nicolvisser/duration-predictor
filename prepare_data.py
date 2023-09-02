@@ -26,7 +26,7 @@ def dedupe(units):
         else:
             durations[-1] += 1
 
-    assert len(codes) == len(durations) # Sanity check
+    assert len(codes) == len(durations)  # Sanity check
 
     return np.array(codes), np.array(durations)
 

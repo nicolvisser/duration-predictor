@@ -7,24 +7,27 @@ from torch.utils.data import DataLoader
 from duration_predictor.dataset import DurationsDataset, collate_fn
 from duration_predictor.module import LitDurationPredictor
 
-data_root = click.prompt("Path to the directory containing the prepared data", type=click.Path(exists=True, dir_okay=True, file_okay=False))
+data_root = click.prompt(
+    "Path to the directory containing the prepared data",
+    type=click.Path(exists=True, dir_okay=True, file_okay=False),
+)
 version_name = click.prompt("Version name", type=str)
 num_codes = click.prompt("Number of codes", type=int)
 
 train_dataset = DurationsDataset(
     root=data_root,
-    subset="train"
+    subset="train",
 )
 
 val_dataset = DurationsDataset(
     root=data_root,
-    subset="dev"
+    subset="dev",
 )
 
 BATCH_SIZE = 256
 
 train_dataloader = DataLoader(
-    dataset = train_dataset,
+    dataset=train_dataset,
     batch_size=BATCH_SIZE,
     shuffle=True,
     num_workers=8,
@@ -51,7 +54,7 @@ duration_predictor = LitDurationPredictor(
     conv_kernel_size=3,
     attn_dropout=0.1,
     conv_dropout=0.1,
-    num_blocks=1
+    num_blocks=1,
 )
 
 tensorboard = pl_loggers.TensorBoardLogger(save_dir="", version=version_name)
@@ -63,11 +66,11 @@ trainer = pl.Trainer(
     logger=tensorboard,
     max_epochs=-1,
     log_every_n_steps=50,
-    callbacks=[checkpoint_callback]
+    callbacks=[checkpoint_callback],
 )
 
 trainer.fit(
     model=duration_predictor,
     train_dataloaders=train_dataloader,
-    val_dataloaders=val_dataloader
+    val_dataloaders=val_dataloader,
 )

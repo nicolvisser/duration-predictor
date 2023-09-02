@@ -1,9 +1,10 @@
 import click
 import torch
+
 from duration_predictor.model import DurationPredictor
 
-def load_model_from_checkpoint(lit_checkpoint_path):
 
+def load_model_from_checkpoint(lit_checkpoint_path):
     checkpoint = torch.load(lit_checkpoint_path)
 
     hyper_parameters = checkpoint["hyper_parameters"]
@@ -20,8 +21,12 @@ def load_model_from_checkpoint(lit_checkpoint_path):
 
     return model
 
+
 if __name__ == "__main__":
-    lit_checkpoint_path = click.prompt("Path to the checkpoint", type=click.Path(exists=True, dir_okay=False, file_okay=True))
+    lit_checkpoint_path = click.prompt(
+        "Path to the checkpoint",
+        type=click.Path(exists=True, dir_okay=False, file_okay=True),
+    )
     model = load_model_from_checkpoint(lit_checkpoint_path)
     model.cuda()
 
