@@ -94,13 +94,13 @@ class DurationPredictor(nn.Module):
     def __init__(
         self,
         num_codes,
-        embedding_dim,
-        nhead,
-        conv_channels,
-        conv_kernel_size,
-        attn_dropout,
-        conv_dropout,
-        num_blocks,
+        embedding_dim=128,
+        nhead=2,
+        conv_channels=1024,
+        conv_kernel_size=3,
+        attn_dropout=0.1,
+        conv_dropout=0.1,
+        num_blocks=1,
     ):
         super().__init__()
         self.encoder = Encoder(
