@@ -126,7 +126,35 @@ class DurationPredictor(nn.Module):
         return log_durations.squeeze(-1)
 
     @torch.inference_mode()
-    def predict(self, src, src_lengths):
+    def predict(self, units):
+        """
+        Predict durations from source sequence.
+
+        Args:
+            src (torch.LongTensor): Source sequence.
+            src_lengths (torch.LongTensor): Source sequence lengths.
+        """
+        assert (
+            units.dim() == 1
+        ), f"Expected 1D tensor during inference, got {units.dim()}"
+
+        src = units.unsqueeze(0)
+        src_lengths = torch.tensor([units.shape[0]], device=units.device)
+
         log_durations = self.__call__(src, src_lengths)
         durations = torch.round((2**log_durations - 1))
-        return durations.long()
+        return durations.long().squeeze()
+
+    @torch.inference_mode()
+    def redupe(self, units):
+        """
+        Reversible data preprocessing for duration predictor.
+
+        Args:
+            src (torch.LongTensor): Unit sequences. Shape (B, T).
+            src_lengths (torch.LongTensor): Unit sequence lengths.
+
+        """
+        durations = self.predict(units)
+        units_reduped = torch.repeat_interleave(units, durations)
+        return units_reduped
