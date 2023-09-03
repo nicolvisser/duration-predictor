@@ -3,47 +3,47 @@ dependencies = ["torch"]
 URLS = {
     "librispeech": {
         50: {
-            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/librispeech-kmeans-50.ckpt"
+            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/librispeech-kmeans-50-15397ff8.ckpt"
         },
         100: {
-            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/librispeech-kmeans-100.ckpt"
+            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/librispeech-kmeans-100-7a6dbca0.ckpt"
         },
         200: {
-            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/librispeech-kmeans-200.ckpt"
+            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/librispeech-kmeans-200-9cf35d6d.ckpt"
         },
         500: {
-            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/librispeech-kmeans-500.ckpt"
+            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/librispeech-kmeans-500-7caf8796.ckpt"
         },
         1000: {
-            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/librispeech-kmeans-1000.ckpt"
+            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/librispeech-kmeans-1000-10c48d81.ckpt"
         },
         2000: {
-            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/librispeech-kmeans-2000.ckpt",
+            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/librispeech-kmeans-2000-ec537612.ckpt",
         },
     },
     "ljspeech": {
         50: {
-            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-50.ckpt"
+            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-50-39d1966d.ckpt"
         },
         100: {
-            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-100.ckpt"
+            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-100-03d12494.ckpt"
         },
         200: {
-            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-200.ckpt"
+            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-200-77231421.ckpt"
         },
         500: {
-            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-500.ckpt",
-            4: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-500-dp-lambda-4.ckpt",
-            8: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-500-dp-lambda-8.ckpt",
-            12: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-500-dp-lambda-12.ckpt",
-            16: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-500-dp-lambda-16.ckpt",
+            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-500-6e22540b.ckpt",
+            4: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-500-dp-lambda-4-2bb539be.ckpt",
+            8: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-500-dp-lambda-8-4a6ca572.ckpt",
+            12: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-500-dp-lambda-12-ee5fe6f0.ckpt",
+            16: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-500-dp-lambda-16-8dbea6c3.ckpt",
         },
         1000: {
-            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-1000.ckpt",
-            4: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-1000-dp-lambda-4.ckpt",
+            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-1000-b6780de5.ckpt",
+            4: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-1000-dp-lambda-4-8dbea6c3.ckpt",
         },
         2000: {
-            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-2000.ckpt"
+            0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/ljspeech-kmeans-2000-ee1cf808.ckpt"
         },
     },
 }
