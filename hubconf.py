@@ -41,7 +41,7 @@ URLS = {
             },
             1000: {
                 0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/duration-hubert-bshall-ljspeech-kmeans-1000-b6780de5.ckpt",
-                4: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/duration-hubert-bshall-ljspeech-kmeans-1000-dp-lambda-4-8dbea6c3.ckpt",
+                4: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/duration-hubert-bshall-ljspeech-kmeans-1000-dp-lambda-4-92bdf960.ckpt",
             },
             2000: {
                 0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/duration-hubert-bshall-ljspeech-kmeans-2000-ee1cf808.ckpt"
