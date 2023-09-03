@@ -77,7 +77,9 @@ def duration_predictor(
 
     if pretrained:
         checkpoint = torch.hub.load_state_dict_from_url(
-            URLS[dataset][n_clusters][lmbda], progress=progress
+            URLS[dataset][n_clusters][lmbda],
+            progress=progress,
+            check_hash=True,
         )
         model = _load_model_from_checkpoint(checkpoint)
         model.eval()
