@@ -53,7 +53,6 @@ URLS = {
 import torch
 
 from duration_predictor import DurationPredictor
-from load_from_checkpoint import _load_model_from_checkpoint
 
 
 def duration_predictor(
@@ -86,7 +85,7 @@ def duration_predictor(
             progress=progress,
             check_hash=True,
         )
-        model = _load_model_from_checkpoint(checkpoint)
+        model = DurationPredictor.load_model_from_lit_checkpoint(checkpoint)
         model.eval()
     else:
         model = DurationPredictor()

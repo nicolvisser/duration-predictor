@@ -158,3 +158,19 @@ class DurationPredictor(nn.Module):
         durations = self.predict(units)
         units_reduped = torch.repeat_interleave(units, durations)
         return units_reduped
+
+    @classmethod
+    def load_model_from_lit_checkpoint_path(cls, lit_checkpoint_path):
+        checkpoint = torch.load(lit_checkpoint_path)
+        model = cls.load_model_from_lit_checkpoint(checkpoint)
+        return model
+
+    @classmethod
+    def load_model_from_lit_checkpoint(cls, lit_checkpoint):
+        hyper_parameters = lit_checkpoint["hyper_parameters"]
+        model = cls(**hyper_parameters)
+        model_weights = lit_checkpoint["state_dict"]
+        for key in list(model_weights.keys()):
+            model_weights[key.replace("dur_predictor.", "")] = model_weights.pop(key)
+        model.load_state_dict(model_weights)
+        return model
