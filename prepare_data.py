@@ -88,7 +88,7 @@ def prepare_codes_and_durations(in_dir, out_dir):
         codes, durations = dedupe(units)
 
         rel_path = unit_path.relative_to(in_dir)
-        out_path = out_dir / rel_path
+        out_path = (out_dir / rel_path.with_suffix(".npz"))
         out_path.parent.mkdir(parents=True, exist_ok=True)
         np.savez(out_path, codes=codes, durations=durations)
 
