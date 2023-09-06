@@ -27,10 +27,15 @@ URLS = {
                 0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/duration-hubert-bshall-ljspeech-kmeans-50-39d1966d.ckpt"
             },
             100: {
-                0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/duration-hubert-bshall-ljspeech-kmeans-100-03d12494.ckpt"
+                0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/duration-hubert-bshall-ljspeech-kmeans-100-03d12494.ckpt",
+                4: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/duration-hubert-bshall-ljspeech-kmeans-100-dp-lambda-4-1c5be544.ckpt",
+                8: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/duration-hubert-bshall-ljspeech-kmeans-100-dp-lambda-8-64b20a14.ckpt",
             },
             200: {
-                0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/duration-hubert-bshall-ljspeech-kmeans-200-77231421.ckpt"
+                0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/duration-hubert-bshall-ljspeech-kmeans-200-77231421.ckpt",
+                4: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/duration-hubert-bshall-ljspeech-kmeans-200-dp-lambda-4-c0801e9c.ckpt",
+                8: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/duration-hubert-bshall-ljspeech-kmeans-200-dp-lambda-8-20c83757.ckpt",
+                12: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/duration-hubert-bshall-ljspeech-kmeans-200-dp-lambda-12-66b6bfc0.ckpt",
             },
             500: {
                 0: "https://github.com/nicolvisser/duration-predictor/releases/download/v0.1/duration-hubert-bshall-ljspeech-kmeans-500-6e22540b.ckpt",
@@ -67,13 +72,9 @@ def duration_predictor(
     allowed_features = URLS.keys()
     assert features in allowed_features, f"features must be one of {allowed_features}"
     allowed_datasets = URLS[features].keys()
-    assert (
-        dataset in allowed_datasets
-    ), f"dataset must be one of {allowed_datasets}, if you choose {features}"
+    assert dataset in allowed_datasets, f"dataset must be one of {allowed_datasets}, if you choose {features}"
     allowed_units = URLS[features][dataset].keys()
-    assert (
-        n_units in allowed_units
-    ), f"n_units must be one of {allowed_units}, if you choose {features} and {dataset}"
+    assert n_units in allowed_units, f"n_units must be one of {allowed_units}, if you choose {features} and {dataset}"
     allowed_lmbdas = URLS[features][dataset][n_units].keys()
     assert (
         dp_lmbda in allowed_lmbdas
