@@ -2,3 +2,4 @@ __pycache__
 env
 lightning_logs
 data
+duration-predictor.code-workspace
