@@ -3,3 +3,5 @@ env
 lightning_logs
 data
 duration-predictor.code-workspace
+train_*
+prepare_data_*
